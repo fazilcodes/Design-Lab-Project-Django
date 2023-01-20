@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architect Plans </title>
+    <link rel="stylesheet" href="{% static 'css/viewplan.css' %}">
+</head>
+<body style="background: url('/static/image/house-1477041_1280.jpg'); background-repeat: no-repeat; background-size: cover;">
+    <div class="title-div"><h2 class="title">View Plans</h2></div>
+    <div class="container">
+        {% for d in data %}
+        <div class="card">
+            <img style="width: 220px; height: 200px;" src="{{ d.image.url }}" alt="">
+            <h1>{{ d.plan }}</h1>
+            <div class="div2">
+                <h4>Price: {{ d.price }}</h4>
+                <h4>Squarefeet: {{ d.squarefeet }}</h4>
+                <h4>Bedrooms: {{ d.numberbedrooms }}</h4>
+                <h4>Bathrooms: {{ d.numberbathrooms }}</h4>
+                <p>{{ d.description }}<p>
+            </div>
+            <a href="{% url 'editPlan' d.id %}" class="btn">Edit</a> <a href="{% url 'deletePlan' d.id %}" class="btn btnd">Delete</a>
+        </div>
+        {% endfor %}s
+    </div>
+</body>
+</html>

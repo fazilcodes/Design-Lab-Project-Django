@@ -1,0 +1,12 @@
+.social-icons a{
+    padding: 2px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: none;
+    transition: 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    background-color: red;
+}

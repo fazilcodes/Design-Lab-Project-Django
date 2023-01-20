@@ -1,0 +1,61 @@
+:root {
+    --yellow: rgb(255, 193, 7);
+    --black: rgb(33, 37, 41); 
+    --white: #fff;
+}
+
+.mynav a {
+    color: var(--white);
+    transition: 0.5s ease-in-out;
+}
+
+.mynav a:hover {
+    color: var(--yellow);
+}
+
+.mybtn {
+    background-color: var(--white);
+    transition: 0.5s ease-in-out;
+}
+
+.mybtn:hover {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+.mylogo {
+    color: var(--yellow);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.mylogo:hover {
+    color: var(--yellow);
+}
+
+.mytoggle span {
+    color: var(--yellow);
+}
+
+.mybtn2 {
+    background-color: var(--yellow);
+    color: var(--black);
+    transition: 0.5s ease-in-out;
+}
+
+.mybtn2:hover {
+    transform: translateY(-5px);
+}
+
+
+.newbtn button {
+    padding: 3px 6px;
+    background-color: var(--yellow);
+    transition: 0.5s ease-in-out;
+    color: var(--black);
+}
+
+.newbtn button:hover {
+    background-color: var(--black);
+    color: white;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'vendors/images/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'vendors/images/favicon-16x16.png' %}">
+    <link rel="stylesheet" href="{% static 'vendors/styles/view.css' %}">
+    <title>Design Lab</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <!-- {% for d in data %} -->
+            <img style="width: 220px;" src="{{ d.image.url }}" alt="">
+            <h1>{{ d.name }}</h1>
+            <div class="div2">
+                <h4>{{ d.username }}</h4>
+                <h4>{{ d.email }}</h4>
+                <h4>{{ d.role }}</h4>
+                <h4>{{ d.experience }} Years Experience</h4>
+            </div>
+            <a href="{% url 'approveArchitect' %}" class="btn">Go back</a>
+            <!-- {% endfor %} -->
+        </div>
+    </div>
+</body>
+</html>

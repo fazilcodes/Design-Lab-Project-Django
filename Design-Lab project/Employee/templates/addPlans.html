@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Plans</title>
+    <link rel="stylesheet" href="{% static 'css/add.css' %}">
+</head>
+<body style="background: url('/static/image/house-1477041_1280.jpg'); background-repeat: no-repeat;
+background-size: cover; background-position: center;">
+    
+    <div class="glass">
+        <h2>Add Your Plans</h2>
+        <form method="post" action="{% url 'savePlan' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+                <label for="">Architect</label><br>
+                <input required type="text" name="architect" readonly value="{{ username }}"><br>
+            </div>
+            <div>
+                <label for="">Name of Plan:</label><br>
+                <input required type="text" name="plan"><br>
+            </div>
+            <div>
+                <label for="">Square Footage:</label><br>
+                <input type="number" name="squarefeet"><br>
+            </div>
+            <div>
+                <label for="">Number of Bedrooms:</label><br>
+                <input type="number" id="" name="numberbedrooms"><br>
+            </div>
+            <div>
+                <label for="">Number of Bathrooms:</label><br>
+                <input type="number" name="numberbathrooms"><br>
+            </div>
+            <div>
+                <label for="">Price</label><br>
+                <input type="number" name="price"><br>
+            </div>
+            <div>
+                <label for="">Image</label><br>
+                <input type="file" name="image"><br>
+            </div>
+            <label for="">Description</label><br>
+            <textarea name="description" rows="3" cols="30"></textarea><br>
+            <button class="btn" type="submit">Submit</button>
+          </form>
+          
+    </div>
+
+</body>
+</html>

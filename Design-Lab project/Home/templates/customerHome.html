@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'vendors/images/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'vendors/images/favicon-16x16.png' %}">
+
+    <!--Bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- bootstrap-icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Lab</title>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand mylogo">Design-Lab</a>
+            <button class="navbar-toggler mytoggle" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse mynav" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'D' %}" class="nav-link">Designs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'A' %}" class="nav-link">Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'homepage' %}" class="nav-link">{{ request.session.name }}</a>
+                    </li>
+                </ul>
+            </div>s
+        </div>
+    </nav>
+
+
+    <!-- Showcase -->
+    <section id="home" class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-lg-start mt-5">
+        <div class="container">
+            <div class="d-md-flex align-items-center justify-content-between">
+                <div>
+                    <h1>Experience the magic of <span class="text-warning">Design</span></h1>
+                    <p class="lead my-4">Ready to transform your space into the home of your dreams? Contact us now to schedule a consultation with
+                         our expert designers and get started today!</p>
+                    <button class="btn mybtn btn-lg mb-3" data-bs-toggle="modal" data-bs-target="#enroll">Sign up</button>
+                </div>
+                <div>
+                    <img class="img-fluid d-none d-lg-block w-75 ms-auto" src="{% static '/images/png1egg.png' %}" alt="">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Newsletter -->
+    <section class="bg-warning text-dark p-5">
+        <div class="container">
+            <div class="d-md-flex justify-content-between align-items-center">
+                <h3 class="mb-3 mb-md-0 text-nowrap">SignUp For Our Newsletter</h3>
+
+                <div class="input-group my-input ms-md-5">
+                    <input type="text" class="form-control" placeholder="Enter Email">
+                    <button class="btn btn-dark btn-lg" type="button">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Boxes -->
+    <section class="p-5">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-house-door"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                Architects
+                            </h3>
+                            <p class="card-text">
+                                Get expert guidance on your house design project contact us now to schedule a consultation and start your design journey
+                            </p>
+                            <a href="{% url 'A' %}" class="btn btn-warning mybtn2">Plan Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-boxes"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                Designers
+                            </h3>
+                            <p class="card-text">
+                                Ready to transform your outdoor space into the oasis of your dreams? Contact us now
+                                and discuss your vision with our team
+                            </p>
+                            <a href="{% url 'D' %}" class="btn btn-warning mybtn2">Design Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-cash-coin"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                Support Us
+                            </h3>
+                            <p class="card-text">
+                                We are a dedicated team of designers who are passionate about creating beautiful designs,
+                                support us by sharing our page
+                            </p>
+                            <a href="#" class="btn btn-warning mybtn2">Share Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact-Expert -->
+    <section id="design" class="p-1" id="design">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md">
+                    <img src="{% static '/images/expert.jpg' %}" alt="" class="img-fluid">
+                </div>
+                <div class="col-md p-5">
+                    <h2>Talk With An Expert</h2>
+                    <p class="lead">Welcome to our design company! Our team of expert designers is dedicated to creating stunning, functional spaces that reflect your personal style and meet your needs.
+                         With years of experience and a passion for design, our team has the skills and expertise to bring your vision to life.</p>
+                    <p>Talk to one of our experts now and get all your doubts cleared!</p>
+                    <a href="#" class="btn btn-warning mt-4 mybtn2"><i class="bi bi-chevron-right"></i>Contact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Design -->
+    <section class="p-3 bg-dark text-light" id="design">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md p-5">
+                    <h2>Design IN And OUT</h2>
+                    <p class="lead">Our design team specializes in creating beautiful, functional spaces that reflect your personal style and meet your needs.</p>
+                    <p>Whether you're looking to update a single room or embark on a full-scale renovation, we have the skills and expertise to bring your vision to life.
+                         We offer a wide range of interior design services, including space planning, color consultation, furniture selection, and more.
+                    </p>
+                    <a href="#" class="btn btn-warning mt-4 mybtn2"><i class="bi bi-chevron-right"></i>Know More</a>
+                </div>
+                <div class="col-md">
+                    <img src="{% static '/images/design.jpg' %}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- question Accordian -->
+    <section class="p-5" id="questions">
+        <div class="container">
+            <h2 class="text-center mb-4">Frequently asked questions</h2>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <!-- item1 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Can we customize the designs?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">YEs, You can customize the design as your needs by just contacting with the designer </div>
+                  </div>
+                </div>
+                <!-- item2 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      Are these Designers Professionals?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">All our designers are qualified professionals who has an experiance of more than 2 years in this field</div>
+                  </div>
+                </div>
+                <!-- item3 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      Where are you exactly located?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">We are currently located in INDIA and our service is availabe all over the world!</div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </section>
+
+
+    <!-- Professional Designers -->
+    <section id="professional" class="p-5 bg-dark">
+        <div class="container">
+            <h2 class="text-center text-white">Our Professional Designers</h2>
+            <p class="lead text-center text-white mb-5">
+                Our Professionals have 2+ years working as a designer in the industry
+            </p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="" class="rounded-circle">
+                            <h3 class="card-title mb-3">Felipe floki</h3>
+                            <p>Lorem ipsum dolor sit amet consectetuaque dignissimos consectetur illum deleniti? Voluptates iusto cupiditate officiis ex sunt?</p>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="" class="rounded-circle">
+                            <h3 class="card-title mb-3">Eliana</h3>
+                            <p>Lorem ipsum dolor sit amet consectetuaque dignissimos consectetur illum deleniti? Voluptates iusto cupiditate officiis ex sunt?</p>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="" class="rounded-circle">
+                            <h3 class="card-title mb-3">Steve barkley</h3>
+                            <p>Lorem ipsum dolor sit amet consectetuaque dignissimos consectetur illum deleniti? Voluptates iusto cupiditate officiis ex sunt?</p>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/men/7.jpg" alt="" class="rounded-circle">
+                            <h3 class="card-title mb-3">Juan dos</h3>
+                            <p>Lorem ipsum dolor sit amet consectetuaque dignissimos consectetur illum deleniti? Voluptates iusto cupiditate officiis ex sunt?</p>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact and map -->
+    <section class="p-5" id="contact">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md">
+                    <h2 class="text-center mb-4">Contact-Info</h2>
+                    <ul class="list-group list-group-flush lead">
+                        <li class="list-group-item">
+                            <span class="fw-bold">Main Location:</span> Kerala, Kochi Infopark
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">Phone:</span> (+91) 7736222685
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">Email:</span> @designlap@gmail.com
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">Job-Contact:</span> (+91) 7736222685
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">Consult:</span> (+91) 7736222685
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md">
+                    <img src="{% static '/images/22441.jpg' %}" alt="Map" class="img-fluid" width="400px">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="p-3 bg-warning text-center position-relative">
+        <div class="container">
+            <p class="lead">Copyright &copy; 2022 Design-Lap</p>
+            <a href="" class="position-absolute bottom-0 end-0 p-3">
+                <i class="bi bi-arrow-up-circle h1 text-dark"></i>
+            </a>
+        </div>
+    </footer>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="enroll" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="enrollLabel">Register</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-dark text-warning">
+          <p class="lead">Fill the form</p>
+          <form action="">
+            <div class="mb-3">
+                <label for="first-name" class="col-form-label">
+                    First Name:
+                </label>
+                <input type="text" class="form-control" id="first-name">
+
+                <label for="Email" class="col-form-label">
+                    Email
+                </label>
+                <input type="text" class="form-control" id="Email">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-warning">Sign in</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
